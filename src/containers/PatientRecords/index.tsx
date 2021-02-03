@@ -6,6 +6,7 @@ import Header from '../../components/Header';
 
 import "./index.style.scss"
 import DataService from "../../services/data.service";
+import Sidebar from "../../components/Sidebar";
 
 interface Props {
   patientRecords: any,
@@ -42,30 +43,34 @@ class PatientRecords extends React.Component <Props>{
     }
 
     return (
-      <div className='patient-records-container'>
+      <>
         { userDetails ?
-          <>
-          <Header userDetails={userDetails} onLogoutClick={() => this.props.logoutUser()}/>
-          { patientRecords && patientRecords.length &&
-            (<div className='patient-list'>
-              {
-                patientRecords.map((patientItem: any, index: number) => (
-                  <div className='patient-card' key={`${patientItem.doc_id}${index}`}>
-                    <div className='patient-name'>{patientItem.name}</div>
-                    <div className='patient-number'>{patientItem.contact_number}</div>
-                    <div className='patient-next-appointment'>
-                      <p>Next Appointment</p>
-                      <p>{patientItem.next_checkdate}</p>
+          <div className='patient-records-container'>
+            <Header userDetails={userDetails} onLogoutClick={() => this.props.logoutUser()} />
+            <div className='patients-container'>
+              <div className='patients-header'>
+                <div className='header-text'>Dr. {userDetails.username} / {patientRecords.length} patients </div>
+                <button className='form-button'>Add New Patient</button>
+              </div>
+              <div className='patient-list'>
+                {
+                  patientRecords && patientRecords.length &&
+                  patientRecords.map((patientItem: any, index: number) => (
+                    <div className='patient-card' key={`${patientItem.doc_id}${index}`}>
+                      <div className='patient-name'>{patientItem.name}</div>
+                      <div className='patient-number'>{patientItem.contact_number}</div>
+                      <div className='patient-next-appointment'>
+                        <p>Next Appointment</p>
+                        <p>{patientItem.next_checkdate}</p>
+                      </div>
                     </div>
-                  </div>
-              ))}
+                  ))}
+              </div>
             </div>
-            )}
-          </> : 
-          <p>logged out...</p>
-        }
-        
-      </div>
+          </div>
+          :
+          null}
+      </>
     )
   }
 }

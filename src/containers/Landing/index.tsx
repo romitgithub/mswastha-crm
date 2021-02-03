@@ -44,7 +44,7 @@ class Landing extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    
+
   }
   
   render() {
@@ -60,7 +60,7 @@ class Landing extends React.Component<Props, State> {
             <p>Just sign up and add patient details to get started.</p>
           </div>
           <div className='meta-info-image'>
-            <img src={mSwasthMockImg} className='mock-image' />
+            <img alt='mswasth' src={mSwasthMockImg} className='mock-image' />
           </div>
         </div>
         <Modal

@@ -20,5 +20,10 @@
     background-color: #FF4747;
     color: white;
     cursor: pointer;
+
+    &.logout {
+      color: #525252;
+      background: #f7f7f7;
+    }
   }
 }

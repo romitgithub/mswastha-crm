@@ -8,7 +8,7 @@ const Header = ({userDetails, onLoginClick, onLogoutClick} : any) => (
       mSwasth
     </div>
     { userDetails ?
-      <button className='form-button' onClick={() => onLogoutClick()}>Logout</button>  
+      <button className='form-button logout' onClick={() => onLogoutClick()}>Logout</button>  
       :
       <button className='form-button' onClick={() => onLoginClick()}>Login</button>
     }
