@@ -7,7 +7,7 @@ const patientRecordsReducer = (
 ) => {
   switch (action.type) {
     case APP_ACTION_TYPE.PATIENT_RECORDS_SUCCESS:
-      let newState = {
+      const newState = {
         ...state,
         patientRecords: action.data
       }

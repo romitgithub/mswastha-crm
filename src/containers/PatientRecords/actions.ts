@@ -1,6 +1,5 @@
 import ACTION_TYPES from "./actionType.enum"
 import DataService from "../../services/data.service"
-import cookieService from "../../services/cookie.service"
 
 const dummyPatients = [
   {
@@ -82,7 +81,7 @@ const dummyPatientRecords = {
 
 export const getPatientRecords = (pagination: any) => {
   return async (dispatch: Function) => {
-    let loggedInUser = await DataService.getLoggedInUserFromStorage();
+    const loggedInUser = await DataService.getLoggedInUserFromStorage();
     if (loggedInUser) {
       DataService.get("getPatientRecords", loggedInUser, {}, { fake: false, data: dummyPatientRecords }).then((response: any) => {
         if (response && response.data) {

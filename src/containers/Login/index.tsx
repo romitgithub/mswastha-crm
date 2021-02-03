@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-import { Redirect, withRouter } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import {updateLoginDetails, loginUser} from './actions';
 
 import "./index.style.scss"

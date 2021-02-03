@@ -392,27 +392,27 @@ class HttpService {
     return extractedResponse;
     /** workaround for non rest api, ONLY DEMO PURPOSE */
 
-    if (originalResponse && originalResponse.status >= 400) {
-      /**
-       * Anything other then code 0 throws an error. Will be handled by handleError method
-       */
-      throw { ...extractedResponse, status: originalResponse.status }
-    } else if (extractedResponse.code !== 0) {
-      throw { ...extractedResponse, status: originalResponse.status }
-    } else {
-      let canShowMessage = false
-      if (
-        Object.hasOwnProperty.call(config, "showMessage") &&
-        config.showMessage === true
-      ) {
-        canShowMessage = true
-      }
+    // if (originalResponse && originalResponse.status >= 400) {
+    //   /**
+    //    * Anything other then code 0 throws an error. Will be handled by handleError method
+    //    */
+    //   throw { ...extractedResponse, status: originalResponse.status }
+    // } else if (extractedResponse.code !== 0) {
+    //   throw { ...extractedResponse, status: originalResponse.status }
+    // } else {
+    //   let canShowMessage = false
+    //   if (
+    //     Object.hasOwnProperty.call(config, "showMessage") &&
+    //     config.showMessage === true
+    //   ) {
+    //     canShowMessage = true
+    //   }
 
-      if (canShowMessage && extractedResponse.message) {
-        this.openSnackBar("", extractedResponse.message, "success")
-      }
-      return extractedResponse
-    }
+    //   if (canShowMessage && extractedResponse.message) {
+    //     this.openSnackBar("", extractedResponse.message, "success")
+    //   }
+    //   return extractedResponse
+    // }
   }
 
   async handleError(error:any, config:any) {

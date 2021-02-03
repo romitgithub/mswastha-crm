@@ -6,7 +6,6 @@ import Header from '../../components/Header';
 
 import "./index.style.scss"
 import DataService from "../../services/data.service";
-import Sidebar from "../../components/Sidebar";
 
 interface Props {
   patientRecords: any,
@@ -36,7 +35,6 @@ class PatientRecords extends React.Component <Props>{
   render() {
     console.log(this.props);
     const { patientRecords, userDetails, loggedOut } = this.props;
-    const { list: patientList, pagination } = patientRecords;
     
     if (loggedOut) {
       this.props.history.replace({pathname: '/'})

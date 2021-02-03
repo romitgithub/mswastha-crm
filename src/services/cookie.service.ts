@@ -24,7 +24,7 @@ class CookieService {
   async set(name: string, value: any, expireInDays: number = -1) {
     let expireInString = '';
     if (expireInDays !== -1) {
-        var date = new Date();
+        let date = new Date();
         date.setTime(date.getTime() + (expireInDays*24*60*60*1000));
         expireInString = "; expires=" + date.toUTCString();
     }
