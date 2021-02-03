@@ -7,7 +7,7 @@ import Login from "../containers/Login"
 import PatientRecords from "../containers/PatientRecords"
 
 const router = () => (
-  <Router basename='/'>
+  <Router basename={process.env.PUBLIC_URL}>
     <Switch>
       <Route exact path="/" component={Landing} />
         
