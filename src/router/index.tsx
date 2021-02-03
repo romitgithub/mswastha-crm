@@ -7,7 +7,7 @@ import Login from "../containers/Login"
 import PatientRecords from "../containers/PatientRecords"
 
 const router = () => (
-  <Router>
+  <Router basename='/'>
     <Switch>
       <Route exact path="/" component={Landing} />
         
