@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/mswasth-crm/static/css/main.db46781e.chunk.css",
+    "main.js": "/mswasth-crm/static/js/main.cf2f1f27.chunk.js",
+    "main.js.map": "/mswasth-crm/static/js/main.cf2f1f27.chunk.js.map",
+    "runtime-main.js": "/mswasth-crm/static/js/runtime-main.b67d3763.js",
+    "runtime-main.js.map": "/mswasth-crm/static/js/runtime-main.b67d3763.js.map",
+    "static/js/2.b389d51b.chunk.js": "/mswasth-crm/static/js/2.b389d51b.chunk.js",
+    "static/js/2.b389d51b.chunk.js.map": "/mswasth-crm/static/js/2.b389d51b.chunk.js.map",
+    "static/js/3.c8fd560b.chunk.js": "/mswasth-crm/static/js/3.c8fd560b.chunk.js",
+    "static/js/3.c8fd560b.chunk.js.map": "/mswasth-crm/static/js/3.c8fd560b.chunk.js.map",
+    "index.html": "/mswasth-crm/index.html",
+    "static/css/main.db46781e.chunk.css.map": "/mswasth-crm/static/css/main.db46781e.chunk.css.map",
+    "static/js/2.b389d51b.chunk.js.LICENSE.txt": "/mswasth-crm/static/js/2.b389d51b.chunk.js.LICENSE.txt",
+    "static/media/mswasth-mock.bce3ae72.png": "/mswasth-crm/static/media/mswasth-mock.bce3ae72.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b67d3763.js",
+    "static/js/2.b389d51b.chunk.js",
+    "static/css/main.db46781e.chunk.css",
+    "static/js/main.cf2f1f27.chunk.js"
+  ]
+}
