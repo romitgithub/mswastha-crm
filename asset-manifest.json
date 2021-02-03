@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/mswasth-crm/static/css/main.2d5b0298.chunk.css",
-    "main.js": "/mswasth-crm/static/js/main.d7798cf4.chunk.js",
-    "main.js.map": "/mswasth-crm/static/js/main.d7798cf4.chunk.js.map",
-    "runtime-main.js": "/mswasth-crm/static/js/runtime-main.b67d3763.js",
-    "runtime-main.js.map": "/mswasth-crm/static/js/runtime-main.b67d3763.js.map",
-    "static/js/2.3ad11eb4.chunk.js": "/mswasth-crm/static/js/2.3ad11eb4.chunk.js",
-    "static/js/2.3ad11eb4.chunk.js.map": "/mswasth-crm/static/js/2.3ad11eb4.chunk.js.map",
-    "static/js/3.c8fd560b.chunk.js": "/mswasth-crm/static/js/3.c8fd560b.chunk.js",
-    "static/js/3.c8fd560b.chunk.js.map": "/mswasth-crm/static/js/3.c8fd560b.chunk.js.map",
-    "index.html": "/mswasth-crm/index.html",
-    "static/css/main.2d5b0298.chunk.css.map": "/mswasth-crm/static/css/main.2d5b0298.chunk.css.map",
-    "static/js/2.3ad11eb4.chunk.js.LICENSE.txt": "/mswasth-crm/static/js/2.3ad11eb4.chunk.js.LICENSE.txt",
-    "static/media/mswasth-mock.bce3ae72.png": "/mswasth-crm/static/media/mswasth-mock.bce3ae72.png"
+    "main.css": "/mswastha-crm/static/css/main.2d5b0298.chunk.css",
+    "main.js": "/mswastha-crm/static/js/main.9f3ce335.chunk.js",
+    "main.js.map": "/mswastha-crm/static/js/main.9f3ce335.chunk.js.map",
+    "runtime-main.js": "/mswastha-crm/static/js/runtime-main.f27c59f7.js",
+    "runtime-main.js.map": "/mswastha-crm/static/js/runtime-main.f27c59f7.js.map",
+    "static/js/2.3ad11eb4.chunk.js": "/mswastha-crm/static/js/2.3ad11eb4.chunk.js",
+    "static/js/2.3ad11eb4.chunk.js.map": "/mswastha-crm/static/js/2.3ad11eb4.chunk.js.map",
+    "static/js/3.c8fd560b.chunk.js": "/mswastha-crm/static/js/3.c8fd560b.chunk.js",
+    "static/js/3.c8fd560b.chunk.js.map": "/mswastha-crm/static/js/3.c8fd560b.chunk.js.map",
+    "index.html": "/mswastha-crm/index.html",
+    "static/css/main.2d5b0298.chunk.css.map": "/mswastha-crm/static/css/main.2d5b0298.chunk.css.map",
+    "static/js/2.3ad11eb4.chunk.js.LICENSE.txt": "/mswastha-crm/static/js/2.3ad11eb4.chunk.js.LICENSE.txt",
+    "static/media/mswasth-mock.bce3ae72.png": "/mswastha-crm/static/media/mswasth-mock.bce3ae72.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.b67d3763.js",
+    "static/js/runtime-main.f27c59f7.js",
     "static/js/2.3ad11eb4.chunk.js",
     "static/css/main.2d5b0298.chunk.css",
-    "static/js/main.d7798cf4.chunk.js"
+    "static/js/main.9f3ce335.chunk.js"
   ]
 }
