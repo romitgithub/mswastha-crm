@@ -1,0 +1,36 @@
+.patient-records-container {
+
+  .patient-list {
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .patient-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0px 0px 12px #efefef;
+      margin: 12px;
+      padding: 16px 20px;
+
+      .patient-name {
+        font-size: 18px;
+        margin-bottom: 4px;
+      }
+
+      .patient-number {
+        font-size: 14px;
+      }
+
+      .patient-next-appointment {
+        font-size: 14px;
+        color: #696969;
+        margin-top: 8px;
+
+        p{
+          margin: 0;
+        }
+      }
+    }
+  }
+}

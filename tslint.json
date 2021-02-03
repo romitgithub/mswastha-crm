@@ -1,0 +1,7 @@
+{
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
+  "rules": {
+    "jsx-no-lambda": false,
+    "no-angle-bracket-type-assertion": false
+  }
+}
