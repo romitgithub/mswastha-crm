@@ -7,7 +7,7 @@ export const loginUser = (userDetails: any) => {
     const { username, password } = userDetails
     DataService.get("login", { username, password }, "", {}).then(
       (response: any) => {
-        if (response.msg === "exist") {
+        if (response && response.msg === "exist") {
           console.log("user exists")
           CookieService.set("user", JSON.stringify(userDetails)).then(() => {
             dispatch(saveUserDetails(userDetails))

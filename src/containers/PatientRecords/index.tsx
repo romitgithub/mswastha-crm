@@ -62,13 +62,15 @@ class PatientRecords extends React.Component<Props> {
                       className="patient-card"
                       key={`${patientItem.doc_id}${index}`}
                     >
-                      <div className="patient-name">{patientItem.name}</div>
-                      <div className="patient-number">
-                        {patientItem.contact_number}
-                      </div>
-                      <div className="patient-next-appointment">
-                        <p>Next Appointment</p>
-                        <p>{patientItem.next_checkdate}</p>
+                      <div className='patient-card-inner'>
+                        <div className="patient-name">{patientItem.name}</div>
+                        <div className="patient-number">
+                          {patientItem.contact_number}
+                        </div>
+                        <div className="patient-next-appointment">
+                          <p>Next Appointment</p>
+                          <p>{patientItem.next_checkdate}</p>
+                        </div>
                       </div>
                     </div>
                   ))}

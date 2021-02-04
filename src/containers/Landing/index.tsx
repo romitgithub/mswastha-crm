@@ -46,17 +46,31 @@ class Landing extends React.Component<Props, State> {
     return (
       <div className="mswasth-crm-page">
         <Header onLoginClick={this.handleLoginClick} />
-        <div className="meta-info-container">
-          <div className="meta-info-text">
-            <h3>Empower your practice with mSwasth</h3>
+        <div className='marketing-gimmick'>
+          <h3>Empower your practice with mSwasth</h3>
             <p>
-              WhatsApp is the most popular messaging platform in India with
-              400mn+ users.
+              Simplifying the doctor patient interaction during the course of treatment
             </p>
-            <p>Just sign up and add patient details to get started.</p>
+        </div>
+        <div className="meta-info-container">
+          <div className="meta-info-doctors">
+            <h3>Doctors</h3>
+            <ul>
+              <li>Stay connected and educate your patients throughout their treatment</li>
+              <li>Schedule revisits with automated reminders</li>
+              <li>Improve patient referrals with better health outcomes</li>
+            </ul>
           </div>
           <div className="meta-info-image">
             <img alt="mswasth" src={mSwasthMockImg} className="mock-image" />
+          </div>
+          <div className="meta-info-patients">
+            <h3>Patients</h3>
+            <ul>
+              <li>No additional app needed, patient can just chat directly</li>
+              <li>No app training required for WhatApp</li>
+              <li>Communication in local language is possible</li>
+            </ul>
           </div>
         </div>
         <Modal
