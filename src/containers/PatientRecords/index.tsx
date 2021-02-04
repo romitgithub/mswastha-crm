@@ -100,7 +100,7 @@ class PatientRecords extends React.Component<Props> {
               shouldCloseOnOverlayClick={true}
               onRequestClose={() => this.props.toggleAddPatientModal(false)}
             >
-              <AddPatient closeModal={this.props.toggleAddPatientModal(false)}/>
+              <AddPatient closeModal={() => this.props.toggleAddPatientModal(false)}/>
             </Modal>
           </div>
         ) : null}
