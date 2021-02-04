@@ -22,13 +22,13 @@ class CookieService {
   }
 
   async set(name: string, value: any, expireInDays: number = -1) {
-    let expireInString = '';
+    let expireInString = ""
     if (expireInDays !== -1) {
-        let date = new Date();
-        date.setTime(date.getTime() + (expireInDays*24*60*60*1000));
-        expireInString = "; expires=" + date.toUTCString();
+      const date = new Date()
+      date.setTime(date.getTime() + expireInDays * 24 * 60 * 60 * 1000)
+      expireInString = "; expires=" + date.toUTCString()
     }
-    document.cookie = name + "=" + (value || "")  + expireInString + "; path=/";
+    document.cookie = name + "=" + (value || "") + expireInString + "; path=/"
   }
 
   async get(name: any) {

@@ -1,6 +1,3 @@
-const PATIENT_RECORDS = {
+const PATIENT_RECORDS = {}
 
-}
-
-export default
-  PATIENT_RECORDS;
+export default PATIENT_RECORDS

@@ -9,9 +9,9 @@ const patientRecordsReducer = (
     case APP_ACTION_TYPE.PATIENT_RECORDS_SUCCESS:
       const newState = {
         ...state,
-        patientRecords: action.data
+        patientRecords: action.data,
       }
-      return newState;
+      return newState
     default:
       return state
   }

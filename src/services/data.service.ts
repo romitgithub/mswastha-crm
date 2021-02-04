@@ -37,7 +37,7 @@ class HttpService {
   static urlMap: any = {
     login: "/doc_login/{username}/{password}/",
     logout: "/user/logout",
-    getPatientRecords: "view_patient_records/{username}/{password}/"
+    getPatientRecords: "view_patient_records/{username}/{password}/",
   }
 
   /**
@@ -51,11 +51,11 @@ class HttpService {
         "content-type": "application/json",
       },
     }
-    this.API_CONTEXT = getApiContext();
+    this.API_CONTEXT = getApiContext()
   }
 
   async getAccessTokenFromStorage() {
-    let value:any
+    let value: any
     try {
       value = await CookieService.get(this.API_CONTEXT)
     } catch (e) {
@@ -65,17 +65,19 @@ class HttpService {
   }
 
   async getLoggedInUserFromStorage() {
-    let value:any
+    let value: any
     try {
       value = await CookieService.get(this.API_CONTEXT)
     } catch (e) {
       console.error("DataService", e)
     }
-    return value && value.user && !this.isObjectEmpty(value.user) ? JSON.parse(value.user) : null
+    return value && value.user && !this.isObjectEmpty(value.user)
+      ? JSON.parse(value.user)
+      : null
   }
 
   async logoutUser() {
-    await CookieService.set('user', null);
+    await CookieService.set("user", null)
   }
 
   async getGlobalOptions() {
@@ -132,7 +134,7 @@ class HttpService {
    * @returns {string}
    */
   createQueryParams(queryParams: any) {
-    queryParams = { ...queryParams}
+    queryParams = { ...queryParams }
     return this.encodeQueryData(queryParams)
   }
 
@@ -144,10 +146,10 @@ class HttpService {
    * @returns {string}     final absolute path => http://api.com/name?name=promil
    */
   getAbsoluteApiPath(
-    url:string,
-    apiParams:any,
-    queryParams:any,
-    config:any = {
+    url: string,
+    apiParams: any,
+    queryParams: any,
+    config: any = {
       onSocket: false,
     }
   ) {
@@ -242,7 +244,7 @@ class HttpService {
    * @param config
    * @returns {Promise<never | ArrayBuffer>}
    */
-  async post(url:string, apiParams:any, body:any, config:any) {
+  async post(url: string, apiParams: any, body: any, config: any) {
     const formData = new FormData()
     const isUploadingAFile = config && config.fileUpload === true
     const parsedUrl = this.getAbsoluteApiPath(url, apiParams, {}, config)
@@ -296,7 +298,7 @@ class HttpService {
    * @param config
    * @returns {Promise<never | ArrayBuffer>}
    */
-  async put(url:any, apiParams:any, body:any, config?:any) {
+  async put(url: any, apiParams: any, body: any, config?: any) {
     // queryParams.time = new Date().getTime();
     const globalOptions = await this.getGlobalOptions()
     const options = { ...globalOptions, ...config }
@@ -330,7 +332,7 @@ class HttpService {
    * @param config
    * @returns {Promise<never | ArrayBuffer>}
    */
-  patch(url:any, apiParams:any, body:any, config:any) {
+  patch(url: any, apiParams: any, body: any, config: any) {
     const parsedUrl = this.getAbsoluteApiPath(url, apiParams, {}, config)
     const options = Object.assign({}, this.getGlobalOptions(), ...config)
     return fetch(parsedUrl, {
@@ -354,7 +356,7 @@ class HttpService {
       })
   }
 
-  async delete(url:any, apiParams:any, config:any) {
+  async delete(url: any, apiParams: any, config: any) {
     const globalOptions = await this.getGlobalOptions()
     const parsedUrl = this.getAbsoluteApiPath(url, apiParams, {}, config)
     const options = { ...globalOptions, ...config }
@@ -385,11 +387,11 @@ class HttpService {
    * @returns {any}
    */
 
-  extractData(originalResponse:any, config:any, extractedResponse:any) {
+  extractData(originalResponse: any, config: any, extractedResponse: any) {
     config = config || {}
 
     /** workaround for non rest api, ONLY DEMO PURPOSE */
-    return extractedResponse;
+    return extractedResponse
     /** workaround for non rest api, ONLY DEMO PURPOSE */
 
     // if (originalResponse && originalResponse.status >= 400) {
@@ -415,7 +417,7 @@ class HttpService {
     // }
   }
 
-  async handleError(error:any, config:any) {
+  async handleError(error: any, config: any) {
     try {
       config = config || {}
 
@@ -464,7 +466,7 @@ class HttpService {
     }
   }
 
-  getMessageFromList(error:any) {
+  getMessageFromList(error: any) {
     const list = error.validationErrors || error.validationErrorList || []
     if (list && list.length) {
       return list[0].message
@@ -478,7 +480,7 @@ class HttpService {
    * @param {...messageKeys}
    * @param config
    */
-  openSnackBar(title:string, message:string, variant:any) {
+  openSnackBar(title: string, message: string, variant: any) {
     EventService.dispatch("toast", {
       title,
       message,
@@ -486,7 +488,7 @@ class HttpService {
     })
   }
 
-  getFakeResponse(data:any, timeout: number, shouldReject:boolean) {
+  getFakeResponse(data: any, timeout: number, shouldReject: boolean) {
     return new Promise((resolve, reject) => {
       window.setTimeout(() => {
         if (typeof shouldReject === "boolean" && !shouldReject) {

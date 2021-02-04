@@ -5,31 +5,31 @@ const loginReducer = (
   state = APP_INITIAL_STATE.loginReducer,
   action: { type: string; data: { [key: string]: any } }
 ) => {
-  let newState;
+  let newState
   switch (action.type) {
     case APP_ACTION_TYPE.UPDATE_LOGIN_DETAILS:
       newState = {
         ...state,
-        loginDetails: action.data
+        loginDetails: action.data,
       }
-      return newState;
+      return newState
     case APP_ACTION_TYPE.LOGIN_SUCCESS:
       newState = {
         ...state,
         userDetails: action.data,
         loggedIn: true,
-        loggedOut: false
+        loggedOut: false,
       }
-      return newState;
+      return newState
     case APP_ACTION_TYPE.LOGOUT_USER:
       newState = {
         ...state,
         userDetails: action.data,
         loggedIn: false,
-        loggedOut: true
+        loggedOut: true,
       }
-      return newState;
-    
+      return newState
+
     default:
       return state
   }
