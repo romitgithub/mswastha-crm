@@ -1,6 +1,5 @@
 import ACTION_TYPES from "./actionType.enum"
 import DataService from "../../services/data.service"
-import CookieService from "../../services/cookie.service"
 
 export const addNewPatient = (patientDetails: any) => {
   return (dispatch: Function) => {
