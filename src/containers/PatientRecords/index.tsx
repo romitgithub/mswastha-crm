@@ -1,11 +1,26 @@
 import React from "react"
 import { connect } from "react-redux"
-import { getPatientRecords } from "./actions"
+import Modal from "react-modal"
+import { getPatientRecords, toggleAddPatientModal } from "./actions"
 import { logoutUser, saveUserDetails } from "../Login/actions"
 import Header from "../../components/Header"
 
 import "./index.style.scss"
 import DataService from "../../services/data.service"
+import AddPatient from "../AddPatient"
+
+Modal.setAppElement("#root")
+
+const customStyles = {
+  overlay: {
+    inset: 0,
+    backgroundColor: "rgba(0,0,0,0.5)",
+  },
+  content: {
+    border: "none",
+    background: "none",
+  },
+}
 
 interface Props {
   patientRecords: any
@@ -14,7 +29,9 @@ interface Props {
   logoutUser: Function
   saveUserDetails: Function
   loggedOut: boolean
-  history: any
+  history: any,
+  toggleAddPatientModal: Function,
+  isAddPatientModalOpen: boolean
 }
 
 class PatientRecords extends React.Component<Props> {
@@ -33,7 +50,7 @@ class PatientRecords extends React.Component<Props> {
 
   render() {
     console.log(this.props)
-    const { patientRecords, userDetails, loggedOut } = this.props
+    const { patientRecords, userDetails, loggedOut, isAddPatientModalOpen } = this.props
 
     if (loggedOut) {
       this.props.history.replace({ pathname: "/" })
@@ -52,7 +69,7 @@ class PatientRecords extends React.Component<Props> {
                 <div className="header-text">
                   Dr. {userDetails.username} / {patientRecords.length} patients{" "}
                 </div>
-                <button className="form-button">Add New Patient</button>
+                <button className="form-button" onClick={() => this.props.toggleAddPatientModal(true)}>Add New Patient</button>
               </div>
               <div className="patient-list">
                 {patientRecords &&
@@ -76,6 +93,15 @@ class PatientRecords extends React.Component<Props> {
                   ))}
               </div>
             </div>
+            <Modal
+              isOpen={isAddPatientModalOpen}
+              style={customStyles}
+              shouldCloseOnEsc={true}
+              shouldCloseOnOverlayClick={true}
+              onRequestClose={() => this.props.toggleAddPatientModal(false)}
+            >
+              <AddPatient closeModal={this.props.toggleAddPatientModal(false)}/>
+            </Modal>
           </div>
         ) : null}
       </>
@@ -89,6 +115,7 @@ const mapStateToProps = (state: any) => {
     patientRecords: state.patientRecordsReducer.patientRecords,
     userDetails: state.loginReducer.userDetails,
     loggedOut: state.loginReducer.loggedOut,
+    isAddPatientModalOpen: state.patientRecordsReducer.isAddPatientModalOpen
   }
 }
 
@@ -102,6 +129,9 @@ const mapDispatchToProps = (dispatch: Function) => ({
   saveUserDetails: (userDetails: any) => {
     dispatch(saveUserDetails(userDetails))
   },
+  toggleAddPatientModal: (isOpen: boolean) => {
+    dispatch(toggleAddPatientModal(isOpen))
+  }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PatientRecords)

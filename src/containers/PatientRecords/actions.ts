@@ -100,3 +100,13 @@ export const getPatientRecords = (pagination: any) => {
     }
   }
 }
+
+export const toggleAddPatientModal = (isOpen: boolean) => {
+  return (dispatch: Function) => {
+    dispatch({
+      type: ACTION_TYPES.TOGGLE_ADD_PATIENT_MODAL,
+      data: isOpen,
+    })
+  }
+}
+

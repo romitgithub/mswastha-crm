@@ -17,7 +17,17 @@ const APP_INITIAL_STATE: any = {
         pageSize: 10,
       },
     },
+    isAddPatientModalOpen: false
   },
+  newPatientReducer: {
+    patientDetails: {
+      name: '',
+      contactNumber: '',
+      lastCheckupDate: '',
+      nextCheckupDate: ''
+    },
+    newPatientAdded: false
+  }
 }
 
 export default APP_INITIAL_STATE

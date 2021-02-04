@@ -5,13 +5,20 @@ const patientRecordsReducer = (
   state = APP_INITIAL_STATE.patientRecordsReducer,
   action: { type: string; data: { [key: string]: any } }
 ) => {
+  let newState;
   switch (action.type) {
     case APP_ACTION_TYPE.PATIENT_RECORDS_SUCCESS:
-      const newState = {
+      newState = {
         ...state,
         patientRecords: action.data,
       }
       return newState
+    case APP_ACTION_TYPE.TOGGLE_ADD_PATIENT_MODAL:
+      newState = {
+        ...state,
+        isAddPatientModalOpen: action.data
+      }
+      return newState;
     default:
       return state
   }
