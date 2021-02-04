@@ -25,8 +25,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "aws s3 sync build/ s3://disha.mswasth.in",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
