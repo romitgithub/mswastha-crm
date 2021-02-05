@@ -9,7 +9,8 @@ interface Props {
   updatePatientDetails: Function,
   addNewPatient: Function,
   newPatientAdded: boolean,
-  closeModal: Function
+  closeModal: Function,
+  userDetails: any
 }
 
 class AddPatient extends React.Component<Props>{
@@ -25,7 +26,7 @@ class AddPatient extends React.Component<Props>{
     const { name, contactNumber, lastCheckupDate, nextCheckupDate } = this.props.patientDetails;
 
     if (this.props.newPatientAdded && this.props.closeModal) {
-      this.props.closeModal();
+      this.props.closeModal(this.props.newPatientAdded);
     }
 
     return (
@@ -43,7 +44,8 @@ class AddPatient extends React.Component<Props>{
         <div className="form-field">
           <label>Contact Number</label>
           <input
-            type="password"
+            type="number"
+            maxLength={10}
             value={contactNumber}
             onChange={e => {
               this.updatePatientDetails('contactNumber', e.target.value)
@@ -74,7 +76,7 @@ class AddPatient extends React.Component<Props>{
         </div>
         <button
           className="form-button"
-          onClick={() => this.props.addNewPatient(this.props.patientDetails)}
+          onClick={() => this.props.addNewPatient(this.props.patientDetails, this.props.userDetails)}
         >
           Add Patient
         </button>
@@ -85,15 +87,16 @@ class AddPatient extends React.Component<Props>{
 
 const mapStateToProps = (state: any) => ({
   patientDetails: state.newPatientReducer.patientDetails,
-  newPatientAdded: state.newPatientReducer.newPatientAdded
+  newPatientAdded: state.newPatientReducer.newPatientAdded,
+  userDetails: state.loginReducer.userDetails
 })
 
 const mapDispatchToProps = (dispatch: Function) => ({
   updatePatientDetails: (patientDetails: any) => {
     dispatch(updatePatientDetails(patientDetails))
   },
-  addNewPatient: (patientDetails: any) => {
-    dispatch(addNewPatient(patientDetails))
+  addNewPatient: (patientDetails: any, userDetails: any) => {
+    dispatch(addNewPatient(patientDetails, userDetails))
   }
 })
 

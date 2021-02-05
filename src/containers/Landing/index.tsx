@@ -5,6 +5,7 @@ import Header from "../../components/Header"
 import Login from "../Login"
 
 import "./index.style.scss"
+import './index.style.mobile.scss';
 
 Modal.setAppElement("#root")
 
@@ -14,10 +15,9 @@ const customStyles = {
     backgroundColor: "rgba(0,0,0,0.5)",
   },
   content: {
+    inset: 0,
     border: "none",
     background: "none",
-    top: "50%",
-    transform: "translate(0, -50%)",
   },
 }
 
@@ -40,7 +40,8 @@ class Landing extends React.Component<Props, State> {
     this.setState({ isLoginModalOpen: true })
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
+  
 
   render() {
     return (
@@ -49,8 +50,11 @@ class Landing extends React.Component<Props, State> {
         <div className='marketing-gimmick'>
           <h3>Empower your practice with mSwasth</h3>
             <p>
-              Simplifying the doctor patient interaction during the course of treatment
+            Simplifying the doctor patient interaction during the course of treatment
             </p>
+          <div className="meta-info-image mobile-only">
+            <img alt="mswasth" src={mSwasthMockImg} className="mock-image" />
+          </div>
         </div>
         <div className="meta-info-container">
           <div className="meta-info-doctors">

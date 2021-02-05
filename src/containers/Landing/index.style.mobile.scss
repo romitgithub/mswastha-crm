@@ -1,0 +1,42 @@
+@media (max-width: 480px) {
+.mswasth-crm-page {
+    .marketing-gimmick {
+      margin: 20px;
+      text-align: center;
+      
+      .meta-info-image {
+        display: none;
+
+        &.mobile-only {
+          display: block;
+          margin-top: 30px;
+
+          .mock-image {
+            width: 300px;
+          }
+        }
+      }
+
+    }
+
+    .meta-info-container {
+      flex-direction: column;
+      padding: 20px;
+      margin: 0 auto;
+
+      .meta-info-image {
+        display: none;
+      }
+
+      .meta-info-doctors, .meta-info-patients {
+        padding-left: 0;
+        padding-right: 0;
+        padding: 24px;
+
+        h3 {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,10 @@
 import ACTION_TYPES from "./actionType.enum"
 import DataService from "../../services/data.service"
 
-export const addNewPatient = (patientDetails: any) => {
+export const addNewPatient = (patientDetails: any, userDetails: any) => {
   return (dispatch: Function) => {
     const { name, contactNumber, lastCheckupDate, nextCheckupDate } = patientDetails;
-    DataService.get("addNewPatient", { name, contactNumber, lastCheckupDate, nextCheckupDate }, "", {}).then(
+    DataService.get("addNewPatient", { name, contactNumber, lastCheckupDate, nextCheckupDate, username: userDetails.username }, "", {}).then(
       (response: any) => {
         if (response && !DataService.isObjectEmpty(response)) {
           dispatch({

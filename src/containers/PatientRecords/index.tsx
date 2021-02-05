@@ -6,6 +6,7 @@ import { logoutUser, saveUserDetails } from "../Login/actions"
 import Header from "../../components/Header"
 
 import "./index.style.scss"
+import './index.style.mobile.scss'
 import DataService from "../../services/data.service"
 import AddPatient from "../AddPatient"
 
@@ -17,6 +18,7 @@ const customStyles = {
     backgroundColor: "rgba(0,0,0,0.5)",
   },
   content: {
+    inset: 0,
     border: "none",
     background: "none",
   },
@@ -80,10 +82,12 @@ class PatientRecords extends React.Component<Props> {
                       key={`${patientItem.doc_id}${index}`}
                     >
                       <div className='patient-card-inner'>
+                        <div>
                         <div className="patient-name">{patientItem.name}</div>
                         <div className="patient-number">
                           {patientItem.contact_number}
-                        </div>
+                          </div>
+                          </div>
                         <div className="patient-next-appointment">
                           <p>Next Appointment</p>
                           <p>{patientItem.next_checkdate}</p>
@@ -100,7 +104,7 @@ class PatientRecords extends React.Component<Props> {
               shouldCloseOnOverlayClick={true}
               onRequestClose={() => this.props.toggleAddPatientModal(false)}
             >
-              <AddPatient closeModal={() => this.props.toggleAddPatientModal(false)}/>
+              <AddPatient closeModal={(newPatientAdded: boolean) => { this.props.toggleAddPatientModal(false); this.props.getPatientRecords() }}/>
             </Modal>
           </div>
         ) : null}
