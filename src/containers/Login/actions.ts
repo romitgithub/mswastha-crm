@@ -7,10 +7,15 @@ export const loginUser = (userDetails: any) => {
     const { username, password } = userDetails
     DataService.get("login", { username, password }, "", {}).then(
       (response: any) => {
-        if (response && !DataService.isObjectEmpty(response)) {
+        if (response && !DataService.isObjectEmpty(response) && response.contact) {
           console.log("user exists")
           CookieService.set("user", JSON.stringify(userDetails)).then(() => {
             dispatch(saveUserDetails(userDetails))
+          })
+        } else {
+          dispatch({
+            type: ACTION_TYPES.LOGIN_FAILED,
+            data: 'Incorrect username/password'
           })
         }
       },

@@ -9,7 +9,8 @@ interface Props {
   loggedIn: boolean
   loginDetails: any
   updateLoginDetails: Function
-  loginUser: Function
+  loginUser: Function,
+  loginErrorMessage: string | null
 }
 
 class Login extends React.Component<Props> {
@@ -30,7 +31,7 @@ class Login extends React.Component<Props> {
   render() {
     console.log(this.props)
     const { username, password } = this.props.loginDetails
-    const { loggedIn } = this.props
+    const { loggedIn, loginErrorMessage } = this.props
 
     return (
       <>
@@ -57,6 +58,9 @@ class Login extends React.Component<Props> {
                 }}
               />
             </div>
+            { loginErrorMessage && loginErrorMessage !== '' &&
+              <p className='login-error'>{loginErrorMessage}</p>
+            }
             <button
               className="form-button"
               onClick={() => this.props.loginUser(this.props.loginDetails)}
@@ -75,6 +79,7 @@ class Login extends React.Component<Props> {
 const mapStateToProps = (state: any) => ({
   loginDetails: state.loginReducer.loginDetails,
   loggedIn: state.loginReducer.loggedIn,
+  loginErrorMessage: state.loginReducer.loginErrorMessage
 })
 
 const mapDispatchToProps = (dispatch: Function) => ({

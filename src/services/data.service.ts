@@ -35,9 +35,10 @@ class HttpService {
    * @type [{string:string}]
    */
   static urlMap: any = {
+    test: '/',
     login: "/doc_login/{username}/{password}/",
-    getPatientRecords: "view_patient_records/{username}/{password}/",
-    addNewPatient: 'add_patient_records/{name}/{contactNumber}/{lastCheckupDate}/{nextCheckupDate}/{username}/'
+    getPatientRecords: "/view_patient_records/{username}/{password}/",
+    addNewPatient: '/add_patient_records/{name}/{contactNumber}/{lastCheckupDate}/{nextCheckupDate}/{username}/'
   }
 
   /**

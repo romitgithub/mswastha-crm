@@ -17,8 +17,15 @@ const loginReducer = (
       newState = {
         ...state,
         userDetails: action.data,
+        loginErrorMessage: null,
         loggedIn: true,
         loggedOut: false,
+      }
+      return newState
+    case APP_ACTION_TYPE.LOGIN_FAILED:
+      newState = {
+        ...state,
+        loginErrorMessage: action.data
       }
       return newState
     case APP_ACTION_TYPE.LOGOUT_USER:

@@ -8,6 +8,7 @@ const APP_INITIAL_STATE: any = {
     userDetails: null,
     loggedIn: false,
     loggedOut: false,
+    loginErrorMessage: null
   },
   patientRecordsReducer: {
     patientRecords: {
