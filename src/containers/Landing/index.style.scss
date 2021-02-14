@@ -97,3 +97,8 @@
     }
   }
 }
+
+.ReactModal__Content { 
+  inset: 50% 0 0 50%!important;
+  transform: translate(-50%,  -50%);
+}
