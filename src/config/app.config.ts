@@ -9,7 +9,6 @@ export let APP_UI_CONFIG = {
 }
 
 export function getApiContext() {
-  console.log(process.env)
   const isProd = process.env.ENVIRONMENT === "production"
   if (isProd) {
     return process.env.REACT_APP_API_CONTEXT

@@ -51,7 +51,6 @@ class PatientRecords extends React.Component<Props> {
   }
 
   render() {
-    console.log(this.props)
     const { patientRecords, userDetails, loggedOut, isAddPatientModalOpen } = this.props
 
     if (loggedOut) {
@@ -114,7 +113,6 @@ class PatientRecords extends React.Component<Props> {
 }
 
 const mapStateToProps = (state: any) => {
-  console.log(state)
   return {
     patientRecords: state.patientRecordsReducer.patientRecords,
     userDetails: state.loginReducer.userDetails,
